@@ -2,6 +2,16 @@
 # input 2 sorted lists
 # output sorted single list
 
+def mergeSort(A):
+    #   Base Case
+    if len(A) == 1:
+        return A
+    else:
+        left = mergeSort(A[len(A)//2:])
+        right = mergeSort(A[:len(A)//2])
+        return merge(left, right)
+
+
 def merge(A, B):
     outList = []
     Ai = 0
